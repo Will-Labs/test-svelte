@@ -1,0 +1,258 @@
+<script>
+  import SidebarItem from "./SidebarItem.svelte";
+  import SidebarFooter from "./SidebarFooter.svelte";
+
+  const navBars = [
+    // dashboard
+    {
+      name: "Public Data",
+      path: "/admin/dashboard",
+      iconHtmlCode: `
+        <span>
+          <svg
+            class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+            />
+          </svg>
+        </span>
+      `,
+      children: [
+        {
+          name: "All Datatypes",
+          number: 700,
+          path: "/dashboard",
+        },
+        {
+          name: "Public Images",
+          number: 400,
+          path: "/project-management",
+        },
+        {
+          name: "Public Audio",
+          number: 400,
+          path: "/project-management",
+        },
+        {
+          name: "Public Video",
+          number: 400,
+          path: "/project-management",
+        },
+        {
+          name: "Public Docs",
+          number: 400,
+          path: "/project-management",
+        },
+      ],
+    },
+    // Components
+    {
+      name: "Private Data",
+      iconHtmlCode: `
+        <span>
+          <svg
+            class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+            />
+          </svg>
+        </span>
+      `,
+      children: [
+        {
+          name: "All DataTypes",
+          number: 400, 
+          path: "/alerts",
+        },
+        {
+          name: "My Private Audio",
+          number: 400, 
+          path: "/buttons",
+        },
+        {
+          name: "My Private Images",
+          number: 400, 
+          path: "/buttons",
+        },
+        {
+          name: "My Private Video",
+          number: 400, 
+          path: "/buttons",
+        },
+        {
+          name: "My Private Docs",
+          number: 400, 
+          path: "/buttons",
+        },
+      ],
+    },
+    // Pages
+    {
+      name: "Wallet",
+      iconHtmlCode: `
+        <span>
+          <svg
+            class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+            />
+          </svg>
+        </span>
+      `,
+      children: [
+        {
+          name: "Wallet Overview",
+          number: 400, 
+          path: "/blank",
+        },
+        {
+          name: "My Wallet",
+          number: 400, 
+          path: "/404",
+        },
+        {
+          name: "Send Tokens",
+          number: 400, 
+          path: "/500",
+        },
+        {
+          name: "Receive Tokens",
+          number: 400, 
+          path: "/profile",
+        },
+      ],
+    },
+    // Authentication
+    {
+      name: "Authentication",
+      iconHtmlCode: `
+        <span>
+          <svg
+            class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            />
+          </svg>
+        </span>
+      `,
+      children: [
+        {
+          name: "Register",
+          number: 400, 
+          path: "/register",
+        },
+        {
+          name: "Login",
+          number: 400, 
+          path: "/login",
+        },
+        {
+          name: "Forgot Password",
+          number: 400, 
+          path: "/forgot-password",
+        },
+        {
+          name: "Reset Password",
+          number: 400, 
+          path: "/reset-password",
+        },
+      ],
+    },
+    // Layouts
+    {
+      name: "Layouts",
+      iconHtmlCode: `
+        <span>
+          <svg
+            class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+            />
+          </svg>
+        </span>
+      `,
+      children: [
+        {
+          name: "Two Columns Sidebar",
+          number: 400, 
+          path: "/two-columns-sidebar",
+        },
+        {
+          name: "Mini + One Column Sidebar",
+          number: 400, 
+          path: "/mini-one-column-sidebar",
+        },
+        {
+          name: "Mini Column Sidebar",
+          number: 400, 
+          path: "/mini-column-sidebar",
+        },
+      ],
+    },
+  ];
+  
+  export let containerClass = 'flex-shrink-0 hidden w-64 bg-white border-r dark:border-primary-darker dark:bg-darker md:block';
+  export let hasCustomButton = true;
+</script>
+
+<!-- Sidebar -->
+<aside
+  class="{containerClass}"
+>
+  <div class="flex flex-col h-full">
+    <!-- Sidebar links -->
+    <nav
+      class="flex-1 px-2 py-4 space-y-2 overflow-y-hidden hover:overflow-y-auto"
+    >
+      {#each navBars as navBar}
+        <SidebarItem navBar={navBar} />
+      {/each}
+      
+    </nav>
+
+    {#if hasCustomButton}
+      <!-- Sidebar footer -->
+      <SidebarFooter />
+    {/if}
+  </div>
+</aside>
