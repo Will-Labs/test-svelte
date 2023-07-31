@@ -1,7 +1,8 @@
 # Hey klk bro
 
-Mi wasapp es +1 (904) 914-0939
+Mi proyecto esta en proceso
 
-Puedo pagar directo en efectivo tambien, o transfer
+ponte
 
-Estoy buscando tutor en SD
+npm i
+npm run dev
